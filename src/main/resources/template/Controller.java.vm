@@ -63,7 +63,7 @@ public class ${className}Controller {
     public R info(@PathVariable("${pk.attrname}") ${pk.attrType} ${pk.attrname}){
         ${className}Entity ${classname} = ${classname}Service.selectById(${pk.attrname});
 
-        return R.ok().put("${classname}", ${classname});
+        return R.ok().put("respBody", ${classname});
     }
 
     /**
