@@ -9,6 +9,7 @@ import javax.validation.constraints.NotNull;
 import io.swagger.annotations.ApiModelProperty;
 import com.hndfsj.common.validator.group.AddGroup;
 import com.hndfsj.common.validator.group.UpdateGroup;
+import lombok.Data;
     #if(${hasBigDecimal})
     import java.math.BigDecimal;
     #end
@@ -23,6 +24,7 @@ import java.time.LocalDateTime;
  * @date ${datetime}
  */
 @TableName("${tableName}")
+@Data
 public class ${className}Entity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -50,20 +52,4 @@ public class ${className}Entity implements Serializable {
     #end
     //columnField end
 
-
-    #foreach ($column in $columns)
-        /**
-         * 设置：${column.comments}
-         */
-        public void set${column.attrName}($column.attrType $column.attrname) {
-            this.$column.attrname = $column.attrname;
-        }
-
-        /**
-         * 获取：${column.comments}
-         */
-        public $column.attrType get${column.attrName}() {
-            return $column.attrname;
-        }
-    #end
 }
