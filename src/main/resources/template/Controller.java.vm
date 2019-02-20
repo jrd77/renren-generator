@@ -20,8 +20,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 
-import ${package}.${moduleName}.entity.${className}Entity;
-import ${package}.${moduleName}.service.${className}Service;
+import ${package}.${moduleName}.entity.${className};
+import ${package}.${moduleName}.service.I${className}Service;
 import ${mainPath}.common.utils.PageUtils;
 import ${mainPath}.common.utils.R;
 
@@ -40,7 +40,7 @@ import ${mainPath}.common.utils.R;
 @Slf4j
 public class ${className}Controller {
     @Autowired
-    private ${className}Service ${classname}Service;
+    private I${className}Service ${classname}Service;
 
     /**
      * 列表
@@ -62,7 +62,7 @@ public class ${className}Controller {
     @ApiOperation(value = "${comments}信息")
     //@RequiresPermissions("${moduleName}:${pathName}:info")
     public R info(@PathVariable("${pk.attrname}") ${pk.attrType} ${pk.attrname}){
-        ${className}Entity ${classname} = ${classname}Service.selectById(${pk.attrname});
+        ${className} ${classname} = ${classname}Service.selectById(${pk.attrname});
 
         return R.ok().put("respBody", ${classname});
     }
@@ -74,7 +74,7 @@ public class ${className}Controller {
     @ApiOperation(value = "${comments}保存")
     @SysLog("${comments}保存")
     //@RequiresPermissions("${moduleName}:${pathName}:save")
-    public R save(@RequestBody @Validated(AddGroup.class) ${className}Entity ${classname}){
+    public R save(@RequestBody @Validated(AddGroup.class) ${className} ${classname}){
         ${classname}Service.insert(${classname});
 
         return R.ok();
@@ -87,7 +87,7 @@ public class ${className}Controller {
     @ApiOperation(value = "${comments}修改")
     @SysLog("${comments}修改")
     //@RequiresPermissions("${moduleName}:${pathName}:update")
-    public R update(@RequestBody @Validated(UpdateGroup.class) ${className}Entity ${classname}){
+    public R update(@RequestBody @Validated(UpdateGroup.class) ${className} ${classname}){
         ${classname}Service.updateAllColumnById(${classname});//全部更新
         
         return R.ok();

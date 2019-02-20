@@ -109,7 +109,7 @@ var vm = new Vue({
 		},
 		getInfo: function(${pk.attrname}){
 			$.get(baseURL + "${moduleName}/${pathName}/info/"+${pk.attrname}, function(r){
-                vm.${classname} = r.respbody;
+                vm.${classname} = r.respBody;
             });
 		},
 		reload: function (event) {

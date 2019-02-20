@@ -8,19 +8,19 @@ import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import ${mainPath}.common.utils.PageUtils;
 import ${mainPath}.common.utils.Query;
 
-import ${package}.${moduleName}.dao.${className}Dao;
-import ${package}.${moduleName}.entity.${className}Entity;
-import ${package}.${moduleName}.service.${className}Service;
+import ${package}.${moduleName}.dao.I${className}Dao;
+import ${package}.${moduleName}.entity.${className};
+import ${package}.${moduleName}.service.I${className}Service;
 
 
 @Service("${classname}Service")
-public class ${className}ServiceImpl extends ServiceImpl<${className}Dao, ${className}Entity> implements ${className}Service {
+public class I${className}ServiceImpl extends ServiceImpl<I${className}Dao, ${className}> implements I${className}Service {
 
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
-        Page<${className}Entity> page = this.selectPage(
-                new Query<${className}Entity>(params).getPage(),
-                new EntityWrapper<${className}Entity>()
+        Page<${className}> page = this.selectPage(
+                new Query<${className}>(params).getPage(),
+                new EntityWrapper<${className}>()
         );
 
         return new PageUtils(page);

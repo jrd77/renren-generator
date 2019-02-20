@@ -196,19 +196,19 @@ public class GenUtils {
 		}
 
 		if (template.contains("Entity.java.vm" )) {
-			return packagePath + "entity" + File.separator + className + "Entity.java";
+			return packagePath + "entity" + File.separator + className + ".java";
 		}
 
 		if (template.contains("Dao.java.vm" )) {
-			return packagePath + "dao" + File.separator + className + "Dao.java";
+			return packagePath + "dao" + File.separator +"I"+ className + "Dao.java";
 		}
 
 		if (template.contains("Service.java.vm" )) {
-			return packagePath + "service" + File.separator + className + "Service.java";
+			return packagePath + "service" + File.separator +"I" + className + "Service.java";
 		}
 
 		if (template.contains("ServiceImpl.java.vm" )) {
-			return packagePath + "service" + File.separator + "impl" + File.separator + className + "ServiceImpl.java";
+			return packagePath + "service" + File.separator + "impl" + File.separator +"I"+ className + "ServiceImpl.java";
 		}
 
 		if (template.contains("Controller.java.vm" )) {
