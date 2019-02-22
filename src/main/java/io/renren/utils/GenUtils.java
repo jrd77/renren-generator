@@ -208,7 +208,7 @@ public class GenUtils {
 		}
 
 		if (template.contains("ServiceImpl.java.vm" )) {
-			return packagePath + "service" + File.separator + "impl" + File.separator +"I"+ className + "ServiceImpl.java";
+			return packagePath + "service" + File.separator + "impl" + File.separator + className + "ServiceImpl.java";
 		}
 
 		if (template.contains("Controller.java.vm" )) {
