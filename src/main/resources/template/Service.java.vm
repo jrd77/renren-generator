@@ -14,7 +14,7 @@ import java.util.Map;
  * @date ${datetime}
  */
 public interface I${className}Service extends IService<${className}> {
-
     PageUtils queryPage(Map<String, Object> params);
+    void validateEntity(${className} ${classname}) throws ParamException;
 }
 

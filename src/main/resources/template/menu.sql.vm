@@ -7,10 +7,10 @@ set @parentId = @@identity;
 
 -- 菜单对应按钮SQL
 INSERT INTO `sys_menu` (`menu_id`,`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-    SELECT replace(UUID(),'-','') ,@parentId, '查看', null, '${moduleName}:${pathName}:list,${moduleName}:${pathName}:info', '2', null, '6';
+    SELECT replace(UUID(),'-','') ,@parentId, '${comments}查看', null, '${moduleName}:${pathName}:list,${moduleName}:${pathName}:info', '2', null, '6';
 INSERT INTO `sys_menu` (`menu_id`,`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-    SELECT replace(UUID(),'-','') , @parentId, '新增', null, '${moduleName}:${pathName}:save', '2', null, '6';
+    SELECT replace(UUID(),'-','') , @parentId, '${comments}新增', null, '${moduleName}:${pathName}:save', '2', null, '6';
 INSERT INTO `sys_menu` (`menu_id`,`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-    SELECT replace(UUID(),'-','')  ,@parentId, '修改', null, '${moduleName}:${pathName}:update', '2', null, '6';
+    SELECT replace(UUID(),'-','')  ,@parentId, '${comments}修改', null, '${moduleName}:${pathName}:update', '2', null, '6';
 INSERT INTO `sys_menu` (`menu_id`,`parent_id`, `name`, `url`, `perms`, `type`, `icon`, `order_num`)
-    SELECT replace(UUID(),'-','') , @parentId, '删除', null, '${moduleName}:${pathName}:delete', '2', null, '6';
+    SELECT replace(UUID(),'-','') , @parentId, '${comments}删除', null, '${moduleName}:${pathName}:delete', '2', null, '6';

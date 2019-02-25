@@ -1,13 +1,17 @@
 package ${package}.${moduleName}.service.impl;
 
+import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang.math.NumberUtils;
 import org.springframework.stereotype.Service;
+
 import java.util.Map;
+
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 import ${mainPath}.common.utils.PageUtils;
 import ${mainPath}.common.utils.Query;
-
+import ${mainPath}.common.exception.ParamException;
 import ${package}.${moduleName}.dao.I${className}Dao;
 import ${package}.${moduleName}.entity.${className};
 import ${package}.${moduleName}.service.I${className}Service;
@@ -26,4 +30,19 @@ public class ${className}ServiceImpl extends ServiceImpl<I${className}Dao, ${cla
         return new PageUtils(page);
     }
 
+    @Override
+    public void validateEntity(${className} ${classname}) throws ParamException {
+        //TODO write validate code throw new ValidateParamException
+        #foreach ($column in $columns)
+            #if($column.attrType=="String")
+if (StringUtils.isBlank(${classname}.get${column.attrName}())){
+                throw new ParamException("${column.comments}不能为空");
+            } #elseif($column.attrType=="Double"||$column.attrType=="Integer"||$column.attrType=="Flout")
+if (${classname}.get${column.attrName}() == null){
+                throw new ParamException("${column.comments}不能为空");
+            }
+            #end
+
+        #end
+    }
 }
