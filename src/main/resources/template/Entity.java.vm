@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotations.TableName;
 
 import javax.validation.constraints.NotNull;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import com.hndfsj.common.validator.group.AddGroup;
 import com.hndfsj.common.validator.group.UpdateGroup;
@@ -24,6 +25,7 @@ import java.time.LocalDateTime;
  * @date ${datetime}
  */
 @TableName("${tableName}")
+@ApiModel("${comments}")
 @Data
 public class ${className} implements Serializable {
     private static final long serialVersionUID = 1L;
