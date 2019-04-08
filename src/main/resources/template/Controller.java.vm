@@ -74,8 +74,7 @@ public class ${className}Controller extends AbstractController {
     @ApiOperation(value = "${comments}保存")
     @SysLog("${comments}保存")
     //@RequiresPermissions("${moduleName}:${pathName}:save")
-    public R save(@RequestParam @ApiParam("实体类字符串") String entity){
-        final ${className} ${classname} =JSONObject.parseObject(entity,${className}.class);
+    public R save(${className} ${classname}){
         ${classname}Service.insert(${classname});
 
         return R.ok();
@@ -88,8 +87,7 @@ public class ${className}Controller extends AbstractController {
     @ApiOperation(value = "${comments}修改")
     @SysLog("${comments}修改")
     //@RequiresPermissions("${moduleName}:${pathName}:update")
-    public R update(@RequestParam @ApiParam("实体类字符串") String entity){
-        final ${className} ${classname} =JSONObject.parseObject(entity,${className}.class);
+    public R update(${className} ${classname}){
         ${classname}Service.updateAllColumnById(${classname});//全部更新
         
         return R.ok();
