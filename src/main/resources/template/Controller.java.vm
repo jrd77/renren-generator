@@ -36,7 +36,7 @@ import ${mainPath}.common.utils.R;
  */
 @RestController
 @Api(value = "${comments}",tags = "${comments}")
-@RequestMapping("${moduleName}/${pathName}")
+@RequestMapping("rest/${moduleName}/${pathName}")
 @Slf4j
 public class ${className}Controller extends AbstractController {
     @Autowired
